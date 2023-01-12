@@ -1,0 +1,45 @@
+{
+    "name": "piyushphpdots/craft-list-orders",
+    "description": "List Orders",
+    "type": "craft-plugin",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "list orders"
+    ],
+    "support": {
+        "docs": "https://github.com/piyushphpdots/craft-list-orders/blob/master/README.md",
+        "issues": "https://github.com/piyushphpdots/craft-list-orders/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "PHPDots Technologies",
+            "homepage": "https://phpdots.com"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0",
+        "stripe/stripe-php": "^10.0"
+    },
+    "autoload": {
+        "psr-4": {
+          "piyushphpdots\\listorders\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Orders",
+        "handle": "list-orders",
+        "hasCpSettings": true,
+        "hasCpSection": true,
+        "developer": "PHPDots Technologies",
+        "developerUrl": "https://phpdots.com",
+        "changelogUrl": "https://raw.githubusercontent.com/piyushphpdots/craft-list-orders/master/CHANGELOG.md",
+        "components": {
+            "orderManager": "piyushphpdots\\listorders\\services\\OrderManager"
+        },
+        "class": "piyushphpdots\\listorders\\ListOrders"
+    }
+}

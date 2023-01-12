@@ -1,0 +1,49 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * List Orders plugin for Craft CMS 3.x
+ *
+ * List Orders index.twig
+ *
+ * @author    PHPDots Technologies
+ * @copyright Copyright (c) 2022 PHPDots Technologies
+ * @link      https://phpdots.com
+ * @package   ListOrders
+ * @since     1.0.0
+ */
+#}
+
+{% extends "_layouts/cp" %}
+{% import "_includes/forms" as forms %}
+
+{% do view.registerAssetBundle("piyushphpdots\\listorders\\assetbundles\\listorders\\ListOrdersAsset") %}
+
+{% set title = "Other Orders" %}
+
+{% set pluginCpUrl = url('list-orders') %}
+{% set selectedSubnavItem = 'listotherorders' %}
+
+{% set content %}
+    <table class="data fullwidth collapsible">
+        <thead>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Course Name</th>
+            <th>Price</th>
+            <th>Course Date</th>
+            <th>Created at</th>
+        </thead>
+        {% for order in orders %}
+            <tr>
+                <td><a href="{{ url('list-orders/list-other-orders/order/' ~ order.id) }}">{{ order.first_name }} {{ order.last_name }}</a></td>
+                <td>{{ order.email }}</td>
+                <td>{{ order.phone }}</td>
+                <td>{{ order.course_name }}</td>
+                <td>£{{ order.price }}</td>
+                <td>{{ order.course_date|date("d/m/Y") }}</td>
+                <td>{{ order.dateCreated|date("M d, Y") }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endset %}
