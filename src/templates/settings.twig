@@ -1,0 +1,23 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * List Orders plugin for Craft CMS 3.x
+ *
+ * List Orders Settings.twig
+ *
+ * @author    PHPDots Technologies
+ * @copyright Copyright (c) 2022 PHPDots Technologies
+ * @link      https://phpdots.com
+ * @package   ListOrders
+ * @since     1.0.0
+ */
+#}
+
+{% import "_includes/forms" as forms %}
+
+{% do view.registerAssetBundle("piyushphpdots\\listorders\\assetbundles\\listorders\\ListOrdersAsset") %}
+<style>
+#action-button button {
+    display:none;
+}
+</style>

@@ -1,0 +1,39 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * List Orders plugin for Craft CMS 3.x
+ *
+ * List Orders edit.twig
+ *
+ * @author    PHPDots Technologies
+ * @copyright Copyright (c) 2022 PHPDots Technologies
+ * @link      https://phpdots.com
+ * @package   ListOrders
+ * @since     1.0.0
+ */
+#}
+
+{% extends "_layouts/cp" %}
+{% import "_includes/forms" as forms %}
+
+{% set title = "Orders" %}
+
+{% set pluginCpUrl = url('list-orders') %}
+{% set selectedSubnavItem = 'listotherorders' %}
+
+{% set content %}
+
+    <p><strong>First Name:</strong> {{ course.first_name }}</p>
+    <p><strong>SurName:</strong> {{ course.last_name }}</p>
+    <p><strong>Email:</strong> {{ course.email }}</p>
+    <p><strong>Phone:</strong> {{ course.phone }}</p>
+    <p><strong>Course Name:</strong> {{ course.course_name }}</p>
+    <p><strong>Course Price:</strong> £{{ course.price }}</p>
+    <p><strong>Course Date:</strong> {{ course.course_date|date('d/m/Y') }}</p>
+    <p><strong>House Number:</strong> {{ course.house_number }}</p>
+    <p><strong>Workshop/Course Date:</strong> {{ course.workshop_title }}</p>
+    <p><strong>Address:</strong> {{ course.customer_address }}</p>
+    <p><strong>Postcode:</strong> {{ course.postcode }}</p>
+    <p><strong>PLEASE PROVIDE DETAILS OF YOUR COUNSELLING QUALIFICATION:</strong> {{ course.description }}</p>
+
+{% endset %}
